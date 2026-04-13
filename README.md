@@ -118,7 +118,9 @@ This project is licensed under the MIT License.
 
 ## 📸 Screenshots
 
-*(Add screenshots here for better presentation)*
+### 🔐 Student Dashboard
+![Student Dashboard](https://github.com/user-attachments/assets/a9e27fd0-f0c0-4917-b8a8-1923e7554c36)
+
 
 ---
 
