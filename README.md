@@ -123,7 +123,7 @@ Database file is available at:
 
 ### 👨‍🏫 Teacher
 
-* Username: `teacher_01`
+* Username: `misam_092`
 * Password: `misam@092`
 
 ### 👨‍🎓 Students
