@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username'])) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'oems.ytsoftwaresolutions@gmail.com';
-            $mail->Password = 'fjya ueme kupi daow'; // app password
+            $mail->Username = 'company123@gmail.com';
+            $mail->Password = 'APP PASSWORD'; // app password
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
-            $mail->setFrom('oems.ytsoftwaresolutions@gmail.com', 'OEMS Support');
+            $mail->setFrom('company123@gmail.com', 'OEMS Support');
             $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject = 'OEMS Password Reset OTP';
