@@ -1,0 +1,266 @@
+<?php
+session_start();
+include("C:/xapp/htdocs/OEMS/includes/dbconnection.php");
+include("C:/xapp/htdocs/OEMS/Privacy/decryption.php");
+
+// ✅ Session check
+if (!isset($_SESSION['username'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$username = $_SESSION['username'];
+// --- Simple SQL query ---
+$sql = "SELECT u.username, u.password, u.role, d.fullname, d.email, d.mobile_number 
+        FROM users u 
+        JOIN users_details d ON u.username = d.username 
+        WHERE u.username = '$username'";
+
+
+$result = mysqli_query($conn, $sql);
+$userData = mysqli_fetch_assoc($result);
+if (!$userData) {
+    die("⚠ No user details found.");
+}
+
+mysqli_close($conn);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile • Online Exam System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("../../assets/images/coder8.png") no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(50px);
+      padding: 35px 40px;
+      width: 700px;
+      max-width: 95%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Stylish Line Below Heading */
+    .heading-line {
+      width: 210px;
+      height: 3px;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+      margin: 0 auto 25px auto;
+      border-radius: 50px;
+      box-shadow: 0 0 8px #7c3aed;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 8px #7c3aed; }
+      to { box-shadow: 0 0 18px #ec4899; }
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      height: 40px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      padding-right: 40px;
+      /* pointer-events: none;   */
+    }
+
+    .form-control:focus,
+    .form-control:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #4f46e5;
+      box-shadow: 0 0 12px #4f46e5;
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    .password-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    /* Buttons */
+    .btn-dashboard {
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 15px;
+      box-shadow: 0 0 10px #3b82f6;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dashboard:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #06b6d4;
+    }
+
+    .btn-edit {
+      background: linear-gradient(90deg, #ec4899, #7c3aed);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 15px;
+      box-shadow: 0 0 10px #ec4899;
+      transition: all 0.3s ease;
+    }
+
+    .btn-edit:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #7c3aed;
+    }
+
+    .mb-custom {
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <h3>👤 User Profile</h3>
+    <div class="heading-line"></div>
+
+    <form>
+      <div class="row">
+        <!-- LEFT SIDE -->
+        <div class="col-md-6">
+          <!-- Username -->
+          <div class="mb-custom">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" class="form-control" value="<?= htmlspecialchars($userData['username']) ?>" required readonly>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-custom">
+            <label for="password" class="form-label">Password</label>
+            <div class="password-container">
+              <input type="password" id="password" class="form-control" value="<?= htmlspecialchars(decrypt($userData['password'])) ?>" readonly>
+              <i class="bi bi-eye eye-icon" id="eyeIcon" onclick="togglePassword()"></i>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-custom">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" value="<?= htmlspecialchars($userData['email']) ?>" required readonly>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-6">
+          <!-- Role -->
+          <div class="mb-custom">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" id="role" class="form-control" value="<?= htmlspecialchars($userData['role']) ?>" readonly>
+          </div>
+
+          <!-- Full Name -->
+          <div class="mb-custom">
+            <label for="fullname" class="form-label">Full Name</label>
+            <input type="text" id="fullname" class="form-control" value="<?= htmlspecialchars($userData['fullname']) ?>" required readonly>
+          </div>
+
+          <!-- Mobile -->
+          <div class="mb-custom">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="tel" id="mobile" class="form-control" value="<?= htmlspecialchars($userData['mobile_number']) ?>" required readonly>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn-dashboard" onclick="goDashboard()">⬅ Go Dashboard</button>
+        <button type="button" class="btn-edit" onclick="editProfile()">✏ Edit</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const eyeIcon = document.getElementById("eyeIcon");
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.remove("bi-eye");
+        eyeIcon.classList.add("bi-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("bi-eye-slash");
+        eyeIcon.classList.add("bi-eye");
+      }
+    }
+
+    let userRole = "<?php echo $userData['role']; ?>";
+    function goDashboard() {
+      if (userRole === 'student') {
+        window.location.href = "../Student/student_dash.php";
+      } else if (userRole === 'teacher') {
+        window.location.href = "../Teacher/teacher_dash.php";
+      } else if (userRole === 'admin') {
+        window.location.href = "../Admin/admin_dash.php";
+      }
+    }
+    
+    function editProfile() {
+      window.location.href = "edit_profile.php"; // Change as per your project
+    }
+  </script>
+</body>
+</html>

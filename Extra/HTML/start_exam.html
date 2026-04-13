@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Take Exam</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <style>
+            body {
+                background: #f8f9fa;
+                font-family: Arial;
+            }
+            .exam-box {
+                max-width: 600px;
+                margin: 50px auto;
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .question {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="exam-box">
+            <form method="post">
+                <div class="question mb-3">
+                    Q<?= $q_index + 1 ?>. <?= $q['question'] ?>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="opt1" value="1">
+                    <label class="form-check-label" for="opt1"><?= $q['option1'] ?></label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="opt2" value="2">
+                    <label class="form-check-label" for="opt2"><?= $q['option2'] ?></label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="opt3" value="3">
+                    <label class="form-check-label" for="opt3"><?= $q['option3'] ?></label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="opt4" value="4">
+                    <label class="form-check-label" for="opt4"><?= $q['option4'] ?></label>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" name="prev" class="btn btn-secondary" <?= $q_index == 0 ? 'disabled' : '' ?>Previous</button>
+                    <button type="submit" name="next" class="btn btn-primary" <?= $q_index == $total - 1 ? 'disabled' : '' ?>Next</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    </html>

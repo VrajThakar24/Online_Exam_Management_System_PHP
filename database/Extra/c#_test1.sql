@@ -1,0 +1,28 @@
+USE online_exam_db;
+
+INSERT INTO csharp_test1 (Question, A, B, C, D, Correct_Ans) VALUES
+('Which Visual Studio version first introduced .NET Core support?', '2010', '2015', '2017', '2022', '2017'),
+('IntelliSense in Visual Studio is used for:', 'Debugging', 'Autocompleting code', 'Designing UI', 'Running code', 'Autocompleting code'),
+('What is the default extension of a C# code file in Visual Studio?', '.c', '.cs', '.cpp', '.vb', '.cs'),
+('Which of the following is NOT part of the Visual Studio IDE?', 'Command Prompt', 'Solution Explorer', 'Properties Window', 'Toolbox', 'Command Prompt'),
+('The default method to add a new form to your project is:', 'Right-click > Add > New Item', 'File > Save As', 'Debug > Add', 'Tools > Insert Form', 'Right-click > Add > New Item'),
+('Which window shows runtime errors and warnings in Visual Studio?', 'Toolbox', 'Error List', 'Output', 'Class View', 'Error List'),
+('What is the file extension of a Windows Form Designer file?', '.cs', '.config', '.resx', '.Designer.cs', '.Designer.cs'),
+('The shortcut to open Solution Explorer is:', 'Ctrl + S', 'Ctrl + Alt + L', 'Alt + E', 'Ctrl + Shift + T', 'Ctrl + Alt + L'),
+('Visual Studio’s “Immediate Window” is used for:', 'Designing UI', 'Writing program', 'Testing code snippets at runtime', 'Debugging compile-time errors', 'Testing code snippets at runtime'),
+('Which of the following helps group multiple projects in Visual Studio?', 'Form', 'Solution', 'File', 'Toolbox', 'Solution'),
+('What is “Break Mode” in Visual Studio?', 'A setting to rest the application', 'Debugger paused execution', 'A shutdown mode', 'A view setting', 'Debugger paused execution'),
+('What is the main purpose of a Debug build in Visual Studio?', 'Optimize performance', 'Remove all symbols', 'Include debugging info and checks', 'Publish application', 'Include debugging info and checks'),
+('Which access modifier allows a member to be accessed within the same class only?', 'public', 'private', 'protected', 'internal', 'private'),
+('Which keyword is used to inherit a class in C#?', 'base', 'derives', 'inherits', ': (colon)', ': (colon)'),
+('What is the size of int data type in C#?', '2 bytes', '4 bytes', '8 bytes', 'Depends on system', '4 bytes'),
+('Which C# keyword is used for creating an abstract class method?', 'override', 'new', 'abstract', 'base', 'abstract'),
+('Which of these cannot be used with polymorphism in C#?', 'Method overriding', 'Interface', 'Constructor', 'Method overloading', 'Constructor'),
+('What is the base class of all classes in C#?', 'Object', 'Class', 'Base', 'Parent', 'Object'),
+('Which of the following is used for multiple inheritance in C#?', 'Class', 'Interface', 'Structure', 'Enum', 'Interface'),
+('Which collection provides non-generic key-value pairs?', 'List', 'Dictionary', 'HashTable', 'Array', 'HashTable'),
+('What is returned by a method that has no return type?', 'int', 'string', 'void', 'object', 'void'),
+('What does the keyword static mean in C#?', 'Runs once only', 'Accessible only in main', 'Belongs to class', 'It’s a constant', 'Belongs to class'),
+('Which loop is guaranteed to run at least once in C#?', 'for', 'foreach', 'while', 'do-while', 'do-while'),
+('Which of the following is a reference type in C#?', 'int', 'float', 'double', 'string', 'string'),
+('What is boxing in C#?', 'Value type to object', 'Object to value type', 'Hiding data', 'Inheriting class', 'Value type to object');

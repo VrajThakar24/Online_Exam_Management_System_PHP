@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="p-4">
+
+  <div class="container border p-4">
+    <h4>Available Exams</h4>
+    <table class="table table-bordered mt-3 text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Marks</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mathematics</td>
+          <td>10:00</td>
+          <td>2025-08-10</td>
+          <td><a href="#" class="btn btn-success btn-sm" onclick="attemptExam('Mathematics','10:00','2025-08-10')">Attempt</a></td>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td>11:00</td>
+          <td>2025-08-10</td>
+          <td><a href="#" class="btn btn-success btn-sm" onclick="attemptExam('Science','11:00','2025-08-10')">Attempt</a></td>
+        </tr>
+        <!-- Add more subjects similarly -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function attemptExam(subject, time, date) {
+      const examTime = new Date(`${date}T${time}:00`);
+      const now = new Date();
+
+      if (now < examTime) {
+        // ❌ Redirect to warning page
+        window.location.href = `exam-not-started.html?subject=${encodeURIComponent(subject)}&time=${time}`;
+      } else {
+        // ✅ Redirect to start exam page
+        window.location.href = `exam-start.html?subject=${encodeURIComponent(subject)}`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://picsum.photos/1600/900?blur=3") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.8); /* white + transparent */
+      padding: 30px;
+      border-radius: 20px;
+      width: 600px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      backdrop-filter: blur(6px); /* glass effect */
+    }
+
+    .profile-card h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #222;
+      border-bottom: 2px solid #2575fc;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columns */
+      gap: 15px 20px; /* row gap & column gap */
+      text-align: left;
+    }
+
+    .profile-item {
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.6);
+      transition: 0.3s;
+    }
+
+
+    .profile-item strong {
+      color: #2575fc;
+    }
+
+    .profile-item:hover {
+      background: rgba(255,255,255,0.9);
+      transform: scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+  <h2>👤 User Profile</h2>
+  <div class="profile-grid">
+    <div class="profile-item"><strong>Username:</strong> pankaj123</div>
+    <div class="profile-item"><strong>Full Name:</strong> Pankaj Yadav</div>
+    <div class="profile-item"><strong>Password:</strong> ********</div>
+    <div class="profile-item"><strong>Email:</strong> pankaj@example.com</div>
+    <div class="profile-item"><strong>Role:</strong> Student</div>
+    <div class="profile-item"><strong>Mobile:</strong> +91 9876543210</div>
+  </div>
+  </div>
+
+</body>
+</html>

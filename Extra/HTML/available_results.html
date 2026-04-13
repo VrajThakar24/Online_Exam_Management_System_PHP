@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Exam Results</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #212529;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    /* Dark header for all columns */
+    thead th {
+      background-color: #212529;
+      color: white;
+    }
+
+    .view-btn {
+      padding: 6px 12px;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .view-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Available Exam Results</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Marks</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mathematics</td>
+        <td>2025-08-01</td>
+        <td>10:00 AM</td>
+        <td>27 / 30</td>
+        <td><a class="view-btn" href="view-result.html?subject=Mathematics&marks=27&total=30&date=2025-08-01&time=10:00 AM">View Result</a></td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>2025-08-02</td>
+        <td>11:00 AM</td>
+        <td>25 / 30</td>
+        <td><a class="view-btn" href="view-result.html?subject=Science&marks=25&total=30&date=2025-08-02&time=11:00 AM">View Result</a></td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>2025-08-03</td>
+        <td>12:00 PM</td>
+        <td>29 / 30</td>
+        <td><a class="view-btn" href="view-result.html?subject=English&marks=29&total=30&date=2025-08-03&time=12:00 PM">View Result</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
