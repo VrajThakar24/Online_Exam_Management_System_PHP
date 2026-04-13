@@ -118,6 +118,9 @@ This project is licensed under the MIT License.
 
 ## 📸 Screenshots
 
+### 🔐 Login Page
+![Login Screenshot](https://github.com/user-attachments/assets/9259dbce-98f9-4e8f-b283-05566de69e3d)
+
 ### 🔐 Student Dashboard
 ![Student Dashboard](https://github.com/user-attachments/assets/a9e27fd0-f0c0-4917-b8a8-1923e7554c36)
 
