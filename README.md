@@ -4,6 +4,19 @@ Online Examination Management System (OEMS) built using PHP, MySQL, HTML, CSS, a
 
 ---
 
+## 👨‍💻 Developers
+
+* Vraj Thakar (@VrajThakar24)
+* Pankaj Yadav (@pankajyadav24)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
 ## 📌 Features
 
 * 🔐 Secure Login System (Admin, Teacher, Student)
@@ -65,7 +78,25 @@ Online Examination Management System (OEMS) built using PHP, MySQL, HTML, CSS, a
    database/online_exam_db.sql
    ```
 
-7. Run project in browser:
+7. Configure Email (SMTP) ⚠️ IMPORTANT:
+
+   Update email and app password in the following files:
+
+   * `result.php`
+   * `result2.php`
+   * `forget_password.php`
+   * `exam_reminder.php`
+
+   Example configuration:
+
+   ```php
+   $mail->Username = "your-email@gmail.com";
+   $mail->Password = "your-app-password";
+   ```
+
+   👉 Use Gmail App Password (not your normal password)
+
+8. Run project in browser:
 
    ```
    http://localhost/Online_Exam_Management_System_PHP
@@ -103,27 +134,15 @@ Database file is available at:
 
 ---
 
-## 👨‍💻 Developers
-
-* Vraj Thakar (@VrajThakar24)
-* Pankaj Yadav (@pankajyadav24)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 📸 Screenshots
 
 ### 🔐 Login Page
+
 ![Login Screenshot](https://github.com/user-attachments/assets/a2b6d38c-0ef8-40cf-bbe8-0d8857be53a8)
 
-### 🔐 Student Dashboard
-![Student Dashboard](https://github.com/user-attachments/assets/6a54bb64-81e8-41de-b124-745dfb998a91)
+### 📊 Student Dashboard
 
+![Student Dashboard](https://github.com/user-attachments/assets/6a54bb64-81e8-41de-b124-745dfb998a91)
 
 ---
 
