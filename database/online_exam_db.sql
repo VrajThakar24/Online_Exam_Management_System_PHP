@@ -321,11 +321,11 @@ CREATE TABLE `users_details` (
 --
 
 INSERT INTO `users_details` (`username`, `fullname`, `email`, `mobile_number`) VALUES
-('202324114', 'Ashwin B Prajapati', 'vrajsthakar24@gmail.com', 9598429976),
-('202324127', 'Nikhil Rana', 'py952326@gmail.com', 9798429976),
-('202324131', 'Nishant Salvi', 'nishant131@gmail.com', 9898326050),
-('admin', 'System Admin', 'tysoftwareolutions@gmail.com', 7984907184),
-('misam_ali_092', 'Misam Nandoliya', 'misamnandoliya092@gmail.com', 9898429976);
+('202324114', 'Ashwin B Prajapati', 'abc12@gmail.com', 9500000095),
+('202324127', 'Nikhil Rana', 'def34@gmail.com', 7900000079),
+('202324131', 'Nishant Salvi', 'ghi56@gmail.com', 9800000098),
+('admin', 'System Admin', 'jkl78@gmail.com', 9500000095),
+('teacher_01', 'Misam Nandoliya', 'mno90@gmail.com', 9000000090);
 
 --
 -- Indexes for dumped tables
