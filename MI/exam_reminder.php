@@ -56,13 +56,13 @@ if (mysqli_num_rows($result) > 0) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'oems.ytsoftwaresolutions@gmail.com';  // Replace with your Gmail
-                $mail->Password = 'fjya ueme kupi daow';        // Use App Password if 2FA enabled
+                $mail->Username = 'company123@gmail.com';  // Replace with your Gmail
+                $mail->Password = 'APP PASSWORD';        // Use App Password if 2FA enabled
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
 
                 // Sender & recipient
-                $mail->setFrom('oems.ytsoftwaresolutions@gmail.com', 'Online Exam Portal');
+                $mail->setFrom('company123@gmail.com', 'Online Exam Portal');
                 $mail->addAddress($to);
 
                 // Email format
