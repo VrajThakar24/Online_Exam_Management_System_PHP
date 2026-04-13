@@ -83,13 +83,13 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = "oems.ytsoftwaresolutions@gmail.com"; 
-    $mail->Password = "fjya ueme kupi daow";
+    $mail->Username = "company123@gmail.com"; //Your Official Email 
+    $mail->Password = "GMAIL APP PASSWORD"; //Gmail 16 digit app Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
     $mail->SMTPDebug  = 0;
 
-    $mail->setFrom("oems.ytsoftwaresolutions@gmail.com","OEMS Exam System");
+    $mail->setFrom("company123@gmail.com","OEMS Exam System");
     $mail->addAddress($userEmail,$userName);
 
     $mail->isHTML(true);
