@@ -99,12 +99,12 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = "oems.ytsoftwaresolutions@gmail.com"; 
-    $mail->Password = "fjya ueme kupi daow";
+    $mail->Username = "company123@gmail.com";  // Your official email 
+    $mail->Password = "YOUR APP PASSWORD"; //Your gmail id 16 digit app Password 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom("oems.ytsoftwaresolutions@gmail.com","OEMS Exam System");
+    $mail->setFrom("company123@gmail.com","OEMS Exam System");
     $mail->addAddress($userEmail,$userName);
 
     $mail->isHTML(true);
@@ -151,4 +151,3 @@ session_destroy();
 </div>
 </body>
 </html>
-3
