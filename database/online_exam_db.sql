@@ -301,7 +301,7 @@ INSERT INTO `users` (`username`, `password`, `role`) VALUES
 ('202324127', 'QlnkloC45:', 'student'),
 ('202324131', 'QlvkdqwC464', 'student'),
 ('admin', 'DgplqC573<', 'admin'),
-('misam_ali_092', 'PlvdpC3<5', 'teacher');
+('misam_092', 'PlvdpC3<5', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -325,7 +325,7 @@ INSERT INTO `users_details` (`username`, `fullname`, `email`, `mobile_number`) V
 ('202324127', 'Nikhil Rana', 'def34@gmail.com', 7900000079),
 ('202324131', 'Nishant Salvi', 'ghi56@gmail.com', 9800000098),
 ('admin', 'System Admin', 'jkl78@gmail.com', 9500000095),
-('teacher_01', 'Misam Nandoliya', 'mno90@gmail.com', 9000000090);
+('misam_092', 'Misam Nandoliya', 'mno90@gmail.com', 9000000090);
 
 --
 -- Indexes for dumped tables
